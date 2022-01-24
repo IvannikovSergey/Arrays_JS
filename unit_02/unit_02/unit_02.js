@@ -60,7 +60,18 @@ let a4 = {
     c: [88, 77, 66]
 };
 
-const f4 = () => {}
+const f4 = () => {
+    let res = '';
+    let in4 = +document.querySelector('.i-4').value;
+    for (let k in a4) {
+        if (a4[k].includes(in4)) {
+            res += k + ' ';
+        } else {
+            res += 'false ';
+        }
+    }
+    document.querySelector('.out-4').textContent = res;
+}
 
 // TASK 05
 // По нажатию b-5 выполняется функция f5. Функция считывает значение из i-5-1 и индекс с которого начинается поиск в массиве с i-5-2 и с помощью includes  ищет данный элемент в массиве a5 c позиции указанной в i-5-2. Выводит в out-5 false если такого элемента при поиске с указанной позиции нет и true если есть.
@@ -73,7 +84,9 @@ const f4 = () => {}
 let a5 = [22, 33, 44, 55, 66, 77, 88, 33, 44, 55, 66, 77];
 
 const f5 = () => {
-
+    let in5_1 = +document.querySelector('.i-5-1').value;
+    let in5_2 = +document.querySelector('.i-5-2').value;
+    document.querySelector('.out-5').textContent = a5.includes(in5_1, in5_2);
 }
 
 // TASK 06
@@ -83,7 +96,10 @@ const f5 = () => {
 
 let a6 = ['Hi', 'wiFI'];
 
-const f6 = () => {}
+const f6 = () => {
+    let in6 = document.querySelector('.i-6').value;
+    document.querySelector('.out-6').textContent = a6.join('').includes(in6);
+}
 
 // TASK 07
 // По нажатию b-7 выполняется функция f7. Функция принимает 2 параметра, первый массив, второй - искомое число. Функция должна эмулировать работу метода includes с помощью цикла. Что понимается под эмуляцией? Мы не используем метод includes ( и indexOf тоже), а циклом перебираем массив и с помощью if решаем задачу. Функция должна только либо выводить в out-7 false, если искомого числа нет в массиве, или true если есть.
@@ -91,7 +107,16 @@ const f6 = () => {}
 
 let a7 = [21, 22, 23, 24, 25, 26, 27];
 
-const f7 = (arr, elem) => {}
+const f7 = (arr, elem) => {
+    let res = false;
+    for (let i = 0; i < arr.length; i++) {
+        if (elem === arr[i]) {
+            res = true;
+            break;
+        }
+    }
+    document.querySelector('.out-7').textContent = res;
+}
 
 // TASK 08
 // По нажатию b-8 выполняется функция f8. Функция должна получить символ из i-8 и с помощью includes проверить есть ли подобный символ в строке a8 или нет. Если есть - вывести true, если нет false;
@@ -99,7 +124,11 @@ const f7 = (arr, elem) => {}
 
 let a8 = 'JSbestever';
 
-const f8 = () => {}
+const f8 = () => {
+    console.log(a8);
+    let in8 = document.querySelector('.i-8').value;
+    if (in8 != '') document.querySelector('.out-8').textContent = a8.includes(in8);
+}
 
 // TASK 09
 // По нажатию b-9 выполняется функция f9. Функция должна получить из i-9 символ и с помощью includes искать его в массиве a9. Обратите внимание на сложность. Если пользователь ввел символ в нижнем регистре то функция должна c помощью includes искать и в нижнем и в верхнем регистре символ в массиве. Если пользователь ввел число - то искать число. Считаем, что пользователь может ввести либо символы латинского алфавита, либо числа. Вывод true, false в out-9.
@@ -111,7 +140,10 @@ const f8 = () => {}
 let a9 = ['A', 'b', 'c', 'C', 'D', 12, 5, 'd', 1];
 
 const f9 = () => {
-    console.log('09');
+    let in9 = document.querySelector('.i-9').value;
+    let str = a9.join('').toLowerCase();
+    document.querySelector('.out-9').textContent = str.includes(in9.toLowerCase());
+    // console.log('09');
 }
 
 // TASK 10

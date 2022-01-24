@@ -22,7 +22,7 @@ const users = [
 ]
 
 let newUsers = users.filter(item => {
-    return item.name.includes('pe')
+    return item.name.includes('pe');
 });
 
 console.log(newUsers);
