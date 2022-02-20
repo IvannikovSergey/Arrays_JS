@@ -152,11 +152,14 @@ let a10 = {
 let z10 = {}; // ожидаю {"best" : 12, "quest" : -6};
 
 const f10 = () => {
-
+    
+    console.log(z10);
 }
 
 function callback10(elem) {
-    // ваш код
+    if (Math.abs(elem) > 5) {
+        return true;
+    } // ваш код
     // return
 }
 
