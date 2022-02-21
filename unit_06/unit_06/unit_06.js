@@ -83,25 +83,25 @@ const f6 = () => {
 // По нажатию b-7 выполняется функция f7. Функция перебирает с помощью filter массив a7 и добавляет в z7 те объекты, пароль которых меньше или равен 6 символов. Результат выводится в консоль.
 
 let a7 = [{
-        "user": "poprik",
-        "pass": "a8b5442b9c"
-    },
-    {
-        "user": "dobrik",
-        "pass": "9665"
-    },
-    {
-        "user": "kovrik",
-        "pass": "DA06aA"
-    },
-    {
-        "user": "shurik",
-        "pass": "71b"
-    },
-    {
-        "user": "zorik",
-        "pass": "362617b302"
-    }
+    "user": "poprik",
+    "pass": "a8b5442b9c"
+},
+{
+    "user": "dobrik",
+    "pass": "9665"
+},
+{
+    "user": "kovrik",
+    "pass": "DA06aA"
+},
+{
+    "user": "shurik",
+    "pass": "71b"
+},
+{
+    "user": "zorik",
+    "pass": "362617b302"
+}
 ];
 let z7 = [];
 
@@ -152,7 +152,11 @@ let a10 = {
 let z10 = {}; // ожидаю {"best" : 12, "quest" : -6};
 
 const f10 = () => {
-    
+    for (let k in a10) {
+        if (callback10(a10[k])) {
+            z10[k] = a10[k];
+        }
+    }
     console.log(z10);
 }
 
